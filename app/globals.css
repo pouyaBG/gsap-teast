@@ -26,5 +26,5 @@ body {
     rgb(var(--background-start-rgb));
 }
 .text-vw{
-  font-size: 10vw;
+  font-size: 150px;
 }
