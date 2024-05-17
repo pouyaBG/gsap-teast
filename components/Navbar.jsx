@@ -13,7 +13,7 @@ const Navbar = () => {
     gsap.to(navbar, {
       scrollTrigger: {
         trigger: ".scrollable-area",
-        start: "top -80",
+        start: "top -50",
         end: 99999,
         onToggle: ({ isActive }) => {
           if (isActive) {
@@ -37,10 +37,10 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="main-tool-bar fixed top-0 w-full px-4 pt-9 pb-4 bg-gray-900">
+      <nav className="main-tool-bar fixed top-0 w-full px-4 pt-9 pb-4 bg-gray-900 z-50">
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-white text-xl font-bold">
-            <p to="/">Your Logo</p>
+            <p to="/">Logo</p>
           </div>
           <ul className="flex space-x-4 withschange">
             <li>
