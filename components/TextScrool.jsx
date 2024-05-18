@@ -17,7 +17,7 @@ const TextScroll = () => {
       trigger: ".content-wrapper",
       pin: true,
       start: "top top",
-      end: "+=350%",
+      end: "+=250%",
     });
 
     let tl = gsap.timeline();
@@ -33,7 +33,7 @@ const TextScroll = () => {
 
     // Add a ScrollTrigger for textone that only triggers once
     ScrollTrigger.create({
-      trigger: ".endyou",
+      trigger: ".texttwo",
       start: "top top", // Adjust start value to where you want the animation to start
       onEnter: () => {
         gsap.to(textone, {
