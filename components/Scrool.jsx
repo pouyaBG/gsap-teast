@@ -1,13 +1,40 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 const Scrool = () => {
+  const svgRef = useRef(null);
+
+  useEffect(() => {
+    const svg = svgRef.current;
+
+    // Define GSAP animation timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: svg,
+        start: "top center", // adjust as needed
+        end: "bottom center", // adjust as needed
+        scrub: true,
+      },
+    });
+
+    // Add animation to the timeline
+    tl.to(svg, {
+      x: () => window.innerWidth * 0.5, // move to half of the window width
+      duration: 1, // adjust duration as needed
+    });
+
+    // Cleanup
+    return () => {
+      tl.kill();
+    };
+  }, []);
+
   return (
-    <div className="w-full h-screen overflow-x-hidden  flex items-center">
+    <div className="w-full h-screen  flex ">
       <div className="mainshape">
-        <div>
+        <div className="box" ref={svgRef}>
           <div className="dashLineone">
             <svg
               width="238"
